@@ -1,14 +1,24 @@
 import React from 'react';
-import App from '../pages/cart/App';
 import Checkout from '../pages/checkout/App';
-/**
- * hookrouter 사용하려하였으나..
- * react 버전이 안맞..
- */
+import Cart from "../pages/cart/App";
+import { Route } from 'react-router-dom';
 
-const routes = {
-    '': () => <App />,
-    '/checkout': () => <Checkout />
+const routers = [
+    {
+        path: '/cart',
+        title: '장바구니',
+        component: Cart
+    },
+    {
+        path: '/checkout',
+        title: '주문하기',
+        component: Checkout
+    }
+];
+
+export default (): JSX.Element[] => {
+    const router = routers.map((route, idx) => {
+        return <Route path={route.path} component={route.component} key={idx} />
+    });
+    return router;
 };
-
-export default routes;

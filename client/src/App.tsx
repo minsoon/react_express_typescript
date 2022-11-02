@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route
+    Switch
 } from 'react-router-dom';
 import Header from './components/Header';
-import Cart from './pages/cart/App';
-import Checkout from './pages/checkout/App';
+import Routers from './routers'
 
 const App: React.FC = () => {
     return (
@@ -15,12 +13,7 @@ const App: React.FC = () => {
             <div id="wrapper">
                 <div id="container">
                     <Switch>
-                        <Route path="/cart">
-                            <Cart />
-                        </Route>
-                        <Route path="/checkout">
-                            <Checkout />
-                        </Route>
+                        {Routers()}
                     </Switch>
                 </div>
             </div>
