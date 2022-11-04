@@ -9,7 +9,12 @@ export type Carts = {
     };
     cart: {
         cartUnitId: number;
-        seller: Seller;
+        seller: {
+            miniShopName: string;
+            sellerKey: string;
+            sellerName: string;
+            shopLink: string;
+        };
         item: {
             cartUnitId: number;
             itemName: string;
@@ -18,13 +23,6 @@ export type Carts = {
             itemSellPrice: number;
         }[];
     }[]
-}
-
-export type Seller = {
-    miniShopName: string;
-    sellerKey: string;
-    sellerName: string;
-    shopLink: string;
 }
 
 export type CartsState = Carts[];

@@ -36,6 +36,9 @@ const Cart: React.FunctionComponent = () => {
         <div id="content" className="cart__wrap" style={{paddingBottom: 100}}>
             <div id="cart_body">
                 <div className="inner_cont">
+                    {carts.map(user => (
+                        <p>{user.buyer.buyerName}</p>
+                    ))}
                     <CartList />
 
                     <div id="cart_order">

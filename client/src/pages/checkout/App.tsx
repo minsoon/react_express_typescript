@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useStyles } from '../../hooks';
 
 const Checkout: React.FunctionComponent = () => {
-    const location = useLocation();
-
-    console.log(location)
     const cssLoad = useStyles('/checkout/app.css', 'service__checkout');
     useEffect(() => {
         if (cssLoad === 'ready') {
             console.info('Css Load Success!!')
         }
-    });
+    }, [cssLoad]);
     return (
         <div id="content" className="checkout__wrap">
             <h2 className="for-a11y">주문하기</h2>

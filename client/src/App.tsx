@@ -13,7 +13,7 @@ const App: React.FC = () => {
             <div id="wrapper">
                 <div id="container">
                     <Switch>
-                        {Routers()}
+                        { Routers() }
                     </Switch>
                 </div>
             </div>
