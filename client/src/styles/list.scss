@@ -12,6 +12,9 @@
         dl {
           padding-bottom: 10px;
           dt {
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
           }
           dd {
             font-weight: bold;

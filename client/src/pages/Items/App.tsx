@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { getItems } from './../../apis/item';
-import '../../list.scss';
+import '../../styles/list.scss';
 
 const List: React.FunctionComponent = () => {
     const [items, setItems] = useState<object | null>(null);

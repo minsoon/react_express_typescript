@@ -1,10 +1,10 @@
 import express, { Request, Response } from 'express'
-const request = require('request')
+import http from './../lib/http'
 const router = express.Router()
 
 router.get('/getCart', (req: Request, res: Response) => {
     try {
-        request({
+        http({
             method: 'GET',
             uri: `${process.env.REACT_APP_CLIENT_API_TEST_URL}/cart`
         }, (error: any, response: any, body: any) => {
@@ -22,9 +22,9 @@ router.get('/getCart', (req: Request, res: Response) => {
 
 router.post('/items', (req: Request, res: Response) => {
     try {
-        request({
+        http({
             method: 'POST',
-            uri: `${process.env.REACT_APP_SERVER_API_URL}/items/get`,
+            uri: '/items/get',
             body: req.body.itemNos,
             json: true
         }, (error: any, response: any, body: any) => {
